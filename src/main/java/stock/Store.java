@@ -5,11 +5,12 @@ import enums.SexType;
 import model.Item;
 import model.Order;
 import service.ItemService;
+import service.OrderService;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class Store implements ItemService {
+public class Store implements ItemService, OrderService {
     private final List<Order> orders;
     private final List<Item> items;
     private final Announcer announcer;
@@ -24,8 +25,8 @@ public class Store implements ItemService {
 
     @Override
     public void findById(int id) {
-        for (Item i : items){
-            if (i.getId() == id){
+        for (Item i : items) {
+            if (i.getId() == id) {
                 announcer.info(i.toString());
             }
         }
