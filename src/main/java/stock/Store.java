@@ -3,7 +3,7 @@ package stock;
 import announcer.Announcer;
 import enums.SexType;
 import model.Item;
-import model.Order;
+import model.User;
 import service.ItemService;
 import service.OrderService;
 
@@ -11,15 +11,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Store implements ItemService, OrderService {
-    private final List<Order> orders;
     private final List<Item> items;
     private final Announcer announcer;
+    private final User user;
 
 
-    public Store(List<Order> orders, List<Item> items) {
-        this.orders = orders;
+    public Store(List<Item> items) {
         this.items = items;
         announcer = new Announcer();
+        user = new User();
+
     }
 
 
