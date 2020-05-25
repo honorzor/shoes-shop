@@ -1,55 +1,40 @@
 package model;
 
+import java.util.Map;
 import java.util.Objects;
 
 public class Order {
-    private int idProduct;
-    private int countProduct;
+    private Map<Integer , Integer> orders;
 
-    public Order(int idProduct, int countProduct) {
-        this.idProduct = idProduct;
-        this.countProduct = countProduct;
+    public Order(Map<Integer, Integer> orders) {
+        this.orders = orders;
     }
 
-    public Order() {
+    public Map<Integer, Integer> getOrders() {
+        return orders;
     }
 
-    public int getIdProduct() {
-        return idProduct;
+    public void setOrders(Map<Integer, Integer> orders) {
+        this.orders = orders;
     }
-
-    public void setIdProduct(int idProduct) {
-        this.idProduct = idProduct;
-    }
-
-    public int getCountProduct() {
-        return countProduct;
-    }
-
-    public void setCountProduct(int countProduct) {
-        this.countProduct = countProduct;
-    }
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Order order = (Order) o;
-        return idProduct == order.idProduct &&
-                countProduct == order.countProduct;
+        return Objects.equals(orders, order.orders);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(idProduct, countProduct);
+        return Objects.hash(orders);
     }
 
     @Override
     public String toString() {
         return "Order{" +
-                "idProduct=" + idProduct +
-                ", idCount=" + countProduct +
+                "orders=" + orders +
                 '}';
     }
 }
