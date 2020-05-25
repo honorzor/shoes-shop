@@ -1,6 +1,10 @@
 package enums;
 
 public enum SexType {
-    MEN,
-    WOMEN
+    MEN ("men"),
+    WOMEN ("women");
+
+    SexType(String men) {
+    }
+
 }
