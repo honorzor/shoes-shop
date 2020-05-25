@@ -1,5 +1,5 @@
 package announcer;
 
 public interface Announce {
-    void info (Object object);
+    void info(Object object);
 }
