@@ -1,19 +1,20 @@
 package model;
 
-import java.util.List;
 import java.util.Objects;
 
 public class User {
     private String name;
-    private List<Order> orders;
+    private Cart cart;
 
-    public User(String name, List<Order> orders) {
+
+    public User(String name, Cart cart) {
         this.name = name;
-        this.orders = orders;
+        this.cart = cart;
+    }
+    public User(){
+
     }
 
-    public User() {
-    }
 
     public String getName() {
         return name;
@@ -23,12 +24,12 @@ public class User {
         this.name = name;
     }
 
-    public List<Order> getOrders() {
-        return orders;
+    public Cart getCart() {
+        return cart;
     }
 
-    public void setOrders(List<Order> orders) {
-        this.orders = orders;
+    public void setCart(Cart cart) {
+        this.cart = cart;
     }
 
     @Override
@@ -37,19 +38,19 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
         return Objects.equals(name, user.name) &&
-                Objects.equals(orders, user.orders);
+                Objects.equals(cart, user.cart);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, orders);
+        return Objects.hash(name, cart);
     }
 
     @Override
     public String toString() {
         return "User{" +
                 "name='" + name + '\'' +
-                ", orders=" + orders +
+                ", cart=" + cart +
                 '}';
     }
 }
