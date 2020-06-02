@@ -4,7 +4,9 @@ public enum SexType {
     MEN ("men"),
     WOMEN ("women");
 
-    SexType(String men) {
-    }
+    private final String type;
 
+    SexType(String type ) {
+        this.type = type;
+    }
 }
